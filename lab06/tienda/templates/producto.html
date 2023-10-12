@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container">
+  <div class="row mt-5 mb-5">
+    <div class="col-md-6">
+      <img src="{% if producto.id == 3 %}https://i.ytimg.com/vi/Nlao4XBJDZ8/maxresdefault.jpg{% elif producto.id == 4 %}https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQf8IWqaY8Wgv_zj7fsMGwh1GIkJdUNxJ8VcQ&usqp=CAU{% elif producto.id == 5 %}https://miamarket.pe/assets/uploads/1cfed3b10ead9c36e3bd8c43a7a91823.jpg{% elif producto.id == 2 %}https://plazavea.vteximg.com.br/arquivos/ids/24844502-512-512/281027.jpg{% elif producto.id == 7 %}https://containermayorista.com/cdn/shop/products/KONITOS-FRESA_600x600_crop_center.jpg?v=1649263389{% elif producto.id == 1 %}https://plazavea.vteximg.com.br/arquivos/ids/24844507-512-512/382595.jpg{% else %}https://img.freepik.com/vector-gratis/personal-almacen-uniforme-carga-cajas-paquetes-verificacion-productos-almacen-entrega-almacenamiento-logistico-entrega-logistica-industria-transporte-camiones-entrega-comercial_1150-60906.jpg{% endif %}"
+        class="img-fluid" alt="{{ producto.nombre }}">
+    </div>
+    <div class="col-md-6">
+      <h1>{{ producto.nombre }}</h1>
+      <p class="text-muted">Categoría: {{ producto.categoria }}</p>
+      <p class="text-primary">Precio: ${{ producto.precio }}</p>
+      <p class="text-success">Stock: {{ producto.stock }}</p>
+      <p class="text-secondary">Fecha de Publicación: {{ producto.pub_date }}</p>
+      <hr>
+      <h4>Descripción:</h4>
+      <p class="text-secondary">{{ producto.descripcion }}Ocurrio un error</p>
+    </div>
+  </div>
+</div>
+{% endblock %}
